@@ -64,3 +64,55 @@ if (johnsTeamAvg > marksTeamAvg) {
 } else {
   console.log('there was a tie!')
 }
+
+/*****************************
+* CODING CHALLENGE 3
+*/
+
+/*
+John and his family went on a holiday and went to 3 different restaurants. The bills were $124, $48 and $268.
+
+To tip the waiter a fair amount, John created a simple tip calculator (as a function). He likes to tip 20% of the bill when the bill is less than $50, 15% when the bill is between $50 and $200, and 10% if the bill is more than $200.
+
+In the end, John would like to have 2 arrays:
+1) Containing all three tips (one for each bill)
+2) Containing all three final paid amounts (bill + tip).
+
+(NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
+
+GOOD LUCK 😀
+*/
+
+const bill1 = 124
+const bill2 = 48
+const bill3 = 268
+
+let tipArray = []
+let finalBillsWithTips = []
+
+const tip1 = tipCalculator(bill1)
+const tip2 = tipCalculator(bill2)
+const tip3 = tipCalculator(bill3)
+
+tipArray.push(tip1, tip2, tip3)
+console.log(tipArray)
+
+const total1 = bill1 + tip1
+const total2 = bill2 + tip2
+const total3 = bill3 + tip3
+
+finalBillsWithTips.push(total1, total2, total3)
+console.log(finalBillsWithTips)
+
+function tipCalculator(billTotal) {
+  let tip
+  if (billTotal < 50) {
+    tip = billTotal * (20/100)
+  } else if (billTotal >= 50 && billTotal <= 200) {
+    tip = billTotal * (15/100)
+  } else {
+    tip = billTotal * (10/100)
+  }
+
+  return tip
+}
